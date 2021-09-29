@@ -28,7 +28,7 @@ JavaScript: Example for API with async function includes the following files:
 
 Installing "JavaScript: Example for API with async function" using the following steps:
 
-1. Download the plugin via https://guillermocamarena.com/api_async_javascript
+1. Download the file/s via https://github.com/gcamarenaprog/api_async_javascript
 2. Run index.html in your web browser favorite.
 
 ## License
