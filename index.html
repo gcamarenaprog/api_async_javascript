@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+			<meta charset="UTF-8">
+			<meta http-equiv="X-UA-Compatible" content="IE=edge">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<title>Consumiendo API en JavaScript</title>
+
+		<script type="text/javascript">
+
+			// This async function get data in JSON format from API
+			async function getDataFromJson()
+			{
+				// Await response from API link
+				const response = await fetch("https://api.nationalize.io/?name=guillermo");
+					
+				// Return data on JSON format 
+				const data = response.json();
+							
+				return data;
+							
+			}
+
+			// This function show data in element "dataJSON" 
+			function showData(n)
+			{            
+				document.getElementById("dataJSON").innerHTML = n.name;
+			}
+
+			// This catch error function
+			getDataFromJson().catch(error =>{
+				console.error(error)				
+				document.getElementById("dataJSON").innerHTML = "No hay datos";
+			})
+				
+			// Call the main async function
+			getDataFromJson().then(showData);
+
+		</script>
+	</head>
+
+	<body>
+		<h2>Ejemplo: Consumiendo API con JavaScript</h2>
+		<p>Se obtiene un objeto JSON con datos sobre los primeros tres países donde se utiliza
+			más el nombre pasado por el parámetro "name" a través de la URL de la API.
+		</p>
+		<p>El JSON con los datos se obtienen desde la siguiente dirección: </p>
+		<p></p>
+		<p>https://api.nationalize.io/?name=vladimir</p>
+					
+		<h3>Datos: </h3>
+		<div id="dataJSON"></div>
+
+		<p>Este es un ejemplo de obtención de datos a través de una API</p>
+	</body>
+
+</html>
